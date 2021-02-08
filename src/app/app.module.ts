@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    RoutingComponents,
+    RoutingComponents //Custom Routing array
 
   ],
   imports: [

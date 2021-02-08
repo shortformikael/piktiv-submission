@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { FormBuilder } from '@angular/forms'
+//Form management
+import { Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+//JSON request
 import JSONRequest from './example-request.json';
-import { Validators } from '@angular/forms' 
+
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent {
 
+  //Instancing of form controls
   userReg = this.fb.group({
     first_name: ['', Validators.required],
     middle_name: [''],
@@ -20,6 +23,7 @@ export class RegistrationComponent implements OnInit {
     password: ['', Validators.required]
   });
 
+  //Instance of JSON request
   request:{
     first_name:string,
     middle_name:string, 
@@ -31,11 +35,9 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
+  //Function called on submission of form
   onSubmit() {
     console.warn(this.userReg.value);
-  }
-
-  ngOnInit(): void {
   }
 
 }

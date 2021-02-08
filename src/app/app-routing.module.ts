@@ -14,6 +14,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
+//Custom array for component routing
 export const RoutingComponents = [
   RegistrationComponent,
   WelcomeComponent
