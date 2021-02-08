@@ -1,0 +1,11 @@
+#body {
+    border: 2px solid black;
+}
+
+form {
+    margin:15px;
+}
+
+button {
+    margin: 10px;
+}
