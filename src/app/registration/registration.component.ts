@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //Form management
-import { Validators } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 //JSON request
 import JSONRequest from './example-request.json';
 
@@ -11,16 +10,16 @@ import JSONRequest from './example-request.json';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
 
   //Instancing of form controls
-  userReg = this.fb.group({
-    first_name: ['', Validators.required],
-    middle_name: [''],
-    last_name: [''],
-    email: [''],
-    phone_number: [''],
-    password: ['', Validators.required]
+  userReg = new FormGroup({
+    first_name: new FormControl(''),
+    middle_name: new FormControl(''),
+    last_name: new FormControl(''),
+    email: new FormControl(''),
+    phone_number: new FormControl(''),
+    password: new FormControl('', Validators.required)
   });
 
   //Instance of JSON request
@@ -32,12 +31,19 @@ export class RegistrationComponent {
     phone_number:string,
     password:string,
   } = JSONRequest;
+  ngOnInit(): void {
+    
+  }
 
-  constructor(private fb: FormBuilder) { }
+  get password() { return this.userReg.get('password'); }
 
   //Function called on submission of form
   onSubmit() {
-    console.warn(this.userReg.value);
+    
+  }
+
+  print() {
+    
   }
 
 }
