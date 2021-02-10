@@ -5,6 +5,7 @@ import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { RegistrationInputComponent } from './registration/registration-input.component'
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service'
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CookieService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

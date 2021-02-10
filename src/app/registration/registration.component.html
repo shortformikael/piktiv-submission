@@ -3,6 +3,11 @@
         <div *ngFor="let input of inputs">
             <app-input [input]="input" [userReg]="userReg"></app-input>
         </div>
+
+        <div *ngIf="payLoad">
+            <p>Saved following Values:</p><br>{{payLoad}}
+        </div>
+
     </form>
-    <button (click)="print()">Print</button>
+    <button type="button" (click)="print()">Print</button>
 </div>

@@ -3,7 +3,6 @@ import RESPONSE from './example-response.json';
 import { Injectable } from '@angular/core';
 
 import { InputElement } from './input-element';
-import { required } from '@rxweb/reactive-form-validators';
 
 @Injectable()
 export class InputService {
@@ -19,11 +18,10 @@ export class InputService {
                 type: this.responseData[i].type,
                 name: this.responseData[i].name,
                 label: this.responseData[i].label,
-                required: this.responseData[i].required
+                required: this.responseData[i].required,
+                validations: this.responseData[i].validations
             });
         }
-
-        console.log(Inputs);
 
         return Inputs;
     }
