@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-//Form management
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+//Form management from @angular
+import { FormControl, FormGroup, Validators, FormsModule,ReactiveFormsModule } from '@angular/forms';
 //JSON request
 import JSONRequest from './example-request.json';
+import { RegistrationInputComponent } from './registration-input.component'
 
+import { InputElement } from './input-element';
 
 @Component({
   selector: 'app-registration',
@@ -13,14 +15,7 @@ import JSONRequest from './example-request.json';
 export class RegistrationComponent implements OnInit{
 
   //Instancing of form controls
-  userReg = new FormGroup({
-    first_name: new FormControl(''),
-    middle_name: new FormControl(''),
-    last_name: new FormControl(''),
-    email: new FormControl(''),
-    phone_number: new FormControl(''),
-    password: new FormControl('', Validators.required)
-  });
+  userReg = new FormGroup({});
 
   //Instance of JSON request
   request:{
@@ -31,11 +26,12 @@ export class RegistrationComponent implements OnInit{
     phone_number:string,
     password:string,
   } = JSONRequest;
+
+
+
   ngOnInit(): void {
     
   }
-
-  get password() { return this.userReg.get('password'); }
 
   //Function called on submission of form
   onSubmit() {
@@ -43,7 +39,8 @@ export class RegistrationComponent implements OnInit{
   }
 
   print() {
-    
+
+    console.log('Printing');
   }
 
 }
