@@ -11,7 +11,8 @@ export class InputControlService {
     const group: any = {};
 
     inputs.forEach(input => {
-      group[input.name] = new FormControl();
+      group[input.name] = input.required ? new FormControl('', Validators.required):
+                                         new FormControl();
     });
     return new FormGroup(group);
   }
