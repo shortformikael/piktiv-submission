@@ -4,7 +4,6 @@ import { FormControl, FormGroup, Validators, FormsModule,ReactiveFormsModule } f
 
 import { InputElement } from './input-element';
 
-
 @Component({
   selector: 'app-input',
   templateUrl: './registration-input.component.html',

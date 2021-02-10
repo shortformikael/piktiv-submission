@@ -6,13 +6,15 @@ import { RegistrationInputComponent } from './registration/registration-input.co
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service'
+import { ToggleDirective } from './registration/toggle.directive'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents, //Custom Routing array
-    RegistrationInputComponent
+    RegistrationInputComponent,
+    ToggleDirective
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@
 
     <div *ngSwitchCase="'password'">
         <label>{{input.label}}: </label><br>
-        <input type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}">
+        <input toggle type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}">
         <div class="warning" *ngIf="!isValid && (isTouched || isDirty)">*{{input.label}} is required</div>
     </div>
 
