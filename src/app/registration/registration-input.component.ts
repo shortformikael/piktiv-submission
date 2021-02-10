@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 //Form management from @angular
 import { FormControl, FormGroup, Validators, FormsModule,ReactiveFormsModule } from '@angular/forms';
-//JSON request
+
+import { InputElement } from './input-element';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, Validators, FormsModule,ReactiveFormsModule } f
 })
 export class RegistrationInputComponent{
 
-    
+    @Input() input!: InputElement<string>;
+    @Input() userReg!: FormGroup;
 
 }

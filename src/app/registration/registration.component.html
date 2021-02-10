@@ -1,7 +1,7 @@
 <div id="body">
     <form [formGroup]="userReg" (ngSubmit)="onSubmit()">
-        <div>
-            <app-input></app-input>
+        <div *ngFor="let input of inputs">
+            <app-input [input]="input" [userReg]="userReg"></app-input>
         </div>
         <button type="submit" [disabled]="!userReg.valid">Submit</button>
     </form>

@@ -16,8 +16,8 @@ export class InputService {
         new InputElement({
             type: 'text',
             name: 'testing',
-            label: 'TestingInput',
-            required: true
+            label: 'Testing Input',
+            required: false
         })
 
     ];

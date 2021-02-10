@@ -1,0 +1,6 @@
+<div [formGroup]="userReg">
+    <label>{{input.label}}: </label>
+    <div [ngSwitch]="input.type">
+        <input *ngSwitchCase="'text'" [formControlName]="input.name">
+    </div>
+</div>
