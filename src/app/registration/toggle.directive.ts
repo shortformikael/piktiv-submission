@@ -6,6 +6,7 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class ToggleDirective {
 
+  //start showing hidden
   private _shown = false;
 
   constructor(private el: ElementRef) {

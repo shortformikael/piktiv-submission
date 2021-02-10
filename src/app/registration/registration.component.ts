@@ -3,11 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { InputElement } from './input-element';
-import { InputControlService } from './input-control.service'
-import { stringify } from '@angular/compiler/src/util';
+import { InputControlService } from './input-control.service';
 import { InputService } from './input.service';
 import { CookieService } from 'ngx-cookie-service';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -22,8 +20,6 @@ export class RegistrationComponent{
   //Instancing of form controls
   userReg: FormGroup;
 
-  payLoad = '';
-
   constructor(private ics: InputControlService, inputService: InputService, private cookieService:CookieService) { 
     this.inputs = inputService.getInputs();
     this.userReg = this.ics.toFormGroup(this.inputs);
@@ -34,9 +30,4 @@ export class RegistrationComponent{
     this.cookieService.deleteAll;
     this.cookieService.set('first_name', this.userReg.controls['first_name'].value);
   }
-
-  print() {
-    console.log('Printing');
-  }
-
 }

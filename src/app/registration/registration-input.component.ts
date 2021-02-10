@@ -13,6 +13,7 @@ export class RegistrationInputComponent{
 
     @Input() input!: InputElement<string>;
     @Input() userReg!: FormGroup;
+    
     get isValid() { return this.userReg.controls[this.input.name].valid; }
     get isTouched() { return this.userReg.controls[this.input.name].touched;}
     get isDirty() { return this.userReg.controls[this.input.name].dirty;}
