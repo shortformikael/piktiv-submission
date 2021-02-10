@@ -1,6 +1,21 @@
-<div [formGroup]="userReg">
-    <label>{{input.label}}: </label>
-    <div [ngSwitch]="input.type">
-        <input *ngSwitchCase="'text'" [formControlName]="input.name">
+<div [formGroup]="userReg" [ngSwitch]="input.type">
+    <div *ngSwitchCase="'text'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" formControlName="{{input.name}}" name="{{input.name}}">
+    </div>
+    <div *ngSwitchCase="'email'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" formControlName="{{input.name}}" name="{{input.name}}">
+    </div>
+    <div *ngSwitchCase="'phone'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" formControlName="{{input.name}}" name="{{input.name}}">
+    </div>
+    <div *ngSwitchCase="'password'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" formControlName="{{input.name}}" name="{{input.name}}">
+    </div>
+    <div *ngSwitchCase="'button'">
+        <button type="submit" [disabled]="!userReg.valid" style="margin: 10px;">{{input.label}}</button>
     </div>
 </div>

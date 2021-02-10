@@ -10,17 +10,19 @@ export class InputService {
     responseData: any[] = RESPONSE;
 
     getInputs() {
+        const Inputs: InputElement<string>[] = [];
 
-    const Inputs: InputElement<string>[] = [
+        for(let i = 0; i < this.responseData.length; i++){
 
-        new InputElement({
-            type: 'text',
-            name: 'testing',
-            label: 'Testing Input',
-            required: false
-        })
+            Inputs[i] = new InputElement<string>({
+                type: this.responseData[i].type,
+                name: this.responseData[i].name,
+                label: this.responseData[i].label
+            });
+        }
 
-    ];
-    return Inputs;
-  }
+        console.log(Inputs);
+
+        return Inputs;
+    }
 }

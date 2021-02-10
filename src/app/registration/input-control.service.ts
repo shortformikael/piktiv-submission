@@ -11,7 +11,7 @@ export class InputControlService {
     const group: any = {};
 
     inputs.forEach(input => {
-      group[input.name] = new FormControl(input.label || '');
+      group[input.name] = new FormControl();
     });
     return new FormGroup(group);
   }

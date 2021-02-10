@@ -3,8 +3,6 @@
         <div *ngFor="let input of inputs">
             <app-input [input]="input" [userReg]="userReg"></app-input>
         </div>
-        <button type="submit" [disabled]="!userReg.valid">Submit</button>
     </form>
-
     <button (click)="print()">Print</button>
 </div>
