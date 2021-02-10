@@ -1,0 +1,7 @@
+<div id="body">
+    <form [formGroup]="userReg" (ngSubmit)="onSubmit()">
+        <div *ngFor="let input of inputs">
+            <app-input [input]="input" [userReg]="userReg"></app-input>
+        </div>
+    </form>
+</div>

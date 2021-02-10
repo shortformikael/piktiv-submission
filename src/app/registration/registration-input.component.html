@@ -1,0 +1,30 @@
+<div [formGroup]="userReg" [ngSwitch]="input.type">
+
+    <div *ngSwitchCase="'text'">
+        <label>{{input.label}}: </label><br>
+        <input  type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}" value="">
+        <div class="warning" *ngIf="!isValid && (isTouched || isDirty)">*{{input.label}} is required</div>
+    </div>
+
+    <div *ngSwitchCase="'email'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}">
+        <div class="warning" *ngIf="!isValid && (isTouched || isDirty)">*{{input.label}} is required</div>
+    </div>
+
+    <div *ngSwitchCase="'phone'">
+        <label>{{input.label}}: </label><br>
+        <input type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}">
+        <div class="warning" *ngIf="!isValid && (isTouched || isDirty)">*{{input.label}} is required</div>
+    </div>
+
+    <div *ngSwitchCase="'password'">
+        <label>{{input.label}}: </label><br>
+        <input toggle type="{{input.type}}" name="{{input.name}}" formControlName="{{input.name}}">
+        <div class="warning" *ngIf="!isValid && (isTouched || isDirty)">*{{input.label}} is required</div>
+    </div>
+
+    <div *ngSwitchCase="'button'">
+        <button type="submit" [disabled]="!userReg.valid" routerLink="/welcome">{{input.label}}</button>
+    </div>
+</div>
